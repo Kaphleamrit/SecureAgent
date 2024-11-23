@@ -1,5 +1,5 @@
 {
-  "scripts": {
+  "scripts": { 
     "start": "node dist/app.js",
     "build": "tsc",
     "serve": "tsc && node dist/app.js"

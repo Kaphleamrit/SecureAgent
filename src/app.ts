@@ -12,6 +12,10 @@ import { Review } from "./constants";
 const devEnv = process.env.NODE_ENV != "production";
 console.log(devEnv);
 
+if (!process.env.AXIOM_TOKEN) {
+  throw new Error('AXIOM_TOKEN environment variable is not set');
+}
+
 const appId = devEnv ? process.env.DEV_APP_ID : process.env.APP_ID;
 const webhookSecret = devEnv ? process.env.DEV_WEBHOOK_SECRET : process.env.WEBHOOK_SECRET;
 
@@ -82,3 +86,7 @@ server.listen(port, () => {
   console.log(`Server is listening for events.`);
   console.log('Press Ctrl + C to quit.')
 });
+
+// Add this for debugging
+console.log('AXIOM_TOKEN:', process.env.AXIOM_TOKEN);
+
