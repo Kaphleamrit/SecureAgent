@@ -12,6 +12,8 @@ import { Review } from "./constants";
 const devEnv = process.env.NODE_ENV != "production";
 console.log(devEnv);
 
+const WHATEVER = "NOT NEEDED";
+
 if (!process.env.AXIOM_TOKEN) {
   throw new Error('AXIOM_TOKEN environment variable is not set');
 }
